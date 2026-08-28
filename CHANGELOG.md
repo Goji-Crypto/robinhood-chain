@@ -7,7 +7,22 @@ effect (fee switch, bucket wallets, bridge limits, migration windows, governance
 - 2026-08-28: Project opened. No mainnet addresses exist yet; anything claiming to be HANU v2 on
   mainnet before it is announced here is not ours.
 
-## Testnet, post-audit redeploy (Robinhood Chain Testnet, chain id 46630) — 2026-08-28
+## Testnet, governed-parameters redeploy (Robinhood Chain Testnet, chain id 46630) — 2026-08-28
+The protections that were hard-coded (fee ceiling, pause cap and cooldown, fee and policy delays,
+governance delays, bridge withdrawal delay and refill period) are now tunable by the company
+multisig **inside fixed fences**: any change that weakens a protection is announced and waits at
+least one day; any change that strengthens one applies at once. The absolute fee fence is 15%; the
+live ceiling remains 10%. Addresses below supersede all earlier testnet sets.
+
+| Contract | Address |
+|---|---|
+| Hanu Yokia v2 (HANU) | `0xd0aEfA9321C570BBb33065dd14D9f10Dc9476C19` |
+| Fee policy (tax = 0, three buckets) | `0x270e9ccd8B4769cA838a8C229871aEd594C01894` |
+| v1 → v2 migrator (lock) | `0xbfde67f8cf5Cf7f3639B9b73c1a7DFE12a359389` |
+| Lock-release bridge | `0xeB6f446b49b3e963cDB35E8a02c07d995cC13F0e` |
+| Mock v1 (testnet only) | `0x62FE2a1D847cb4d311A77a0c6Bd0FC80a2E2d0b0` |
+
+## Testnet, post-audit redeploy (superseded) — 2026-08-28
 An internal security audit (static analysis, property tests, two independent adversarial reviews)
 found 9 medium and 12 low issues; all were fixed or accepted with a written rationale, and the
 contract set was redeployed. Highlights holders should know: a fee policy can never block a
