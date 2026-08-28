@@ -1,0 +1,78 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Goji Stock Deck wireframes</title><style>body{margin:0;background:#eceff3;font:13px/1.4 Helvetica,Arial,sans-serif;color:#222;padding:24px}h1{font-size:18px;margin:0 0 6px}.note{color:#666;font-size:12px;margin-bottom:18px}.row{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start;margin-bottom:26px}.frame{background:#fff;border:2px solid #444;width:560px;min-height:340px;padding:12px;position:relative;box-shadow:4px 4px 0 #bbb}.frame.narrow{width:340px}.frame h2{font-size:12px;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px;color:#555;border-bottom:1px dashed #999;padding-bottom:6px}.box{border:1.5px solid #666;background:#f7f7f7;padding:8px;margin-bottom:8px;border-radius:2px}.box.strong{border-width:2px;background:#e9e9e9}.grid{display:grid;gap:8px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.tile{border:1.5px solid #666;padding:8px;background:#fafafa;text-align:center}.tile b{display:block;font-size:18px}.tile span{font-size:10px;color:#666;text-transform:uppercase}.bar{display:flex;gap:8px;align-items:center;margin-bottom:8px}.bar .in{flex:1;border:1.5px solid #666;padding:6px;background:#fff;color:#888}.btn{border:2px solid #333;padding:6px 10px;background:#fff;font-weight:bold}.btn.ghost{border-style:dashed;color:#777}table{width:100%;border-collapse:collapse;font-size:11.5px}th,td{border:1px solid #999;padding:5px;text-align:left}th{background:#e6e6e6;font-size:10px;text-transform:uppercase}.hatch{background:repeating-linear-gradient(45deg,#ddd 0 4px,#fff 4px 8px);color:#555}.ann{position:absolute;background:#fff3b0;border:1px solid #c9a800;padding:4px 6px;font-size:10.5px;max-width:190px;line-height:1.3}.banner{border:2px solid #333;padding:8px;margin-bottom:8px;display:flex;gap:10px;align-items:center}.banner .tag{border:1.5px solid #333;padding:2px 6px;font-size:10px;font-weight:bold;white-space:nowrap}.banner.crit{background:#f0f0f0;border-style:double}.steps{display:flex;gap:6px;align-items:stretch}.step{flex:1;border:1.5px solid #666;padding:8px;background:#fafafa;font-size:11.5px}.step b{display:block;margin-bottom:4px}.arrow{align-self:center;font-size:18px;color:#666}.kv{display:flex;justify-content:space-between;border-bottom:1px dotted #aaa;padding:4px 0;font-size:11.5px}.kv span:last-child{font-weight:bold}.drawer{position:absolute;right:10px;top:40px;width:200px;background:#fff;border:2px solid #444;padding:8px;box-shadow:3px 3px 0 #bbb}.foot{border-top:1px dashed #999;margin-top:8px;padding-top:6px;font-size:10px;color:#777}</style></head><body>
+<h1>Goji Stock Deck (read-only) - wireframes v0.1</h1>
+<div class="note">Greyscale by intent. Hatched = live data from the public stock token API or the chain. No trade actions exist anywhere in this product.</div>
+
+<div class="row">
+ <div class="frame">
+  <h2>1 · Market (landing)</h2>
+  <div class="bar"><b>◈ Goji Stock Deck</b><span style="color:#888;font-size:11px">read-only · chain 4663</span><span style="flex:1"></span><span class="btn ghost">Market</span><span class="btn ghost">Corporate actions</span><span class="btn ghost">Holdings</span></div>
+  <div class="banner crit"><span class="tag">NOT AVAILABLE IN YOUR REGION · US</span><span>Stock Tokens are not offered to persons in the United States. Read-only market information; nothing here is an offer.</span></div>
+  <div class="grid g4"><div class="tile"><b>194</b><span>tokens listed</span></div><div class="tile"><b>40</b><span>priced (window)</span></div><div class="tile"><b>0</b><span>trading halts</span></div><div class="tile"><b>4663</b><span>chain</span></div></div>
+  <div class="bar" style="margin-top:8px"><div class="in">Search symbol or name</div><span style="color:#888;font-size:11px">194 shown</span></div>
+  <table><tr><th>Symbol ▲</th><th>Name</th><th>Mid (USD)</th><th>Bid / Ask</th><th>Volume</th><th>Multiplier</th><th>Status</th></tr>
+  <tr><td><b>AAPL</b></td><td>Apple Inc</td><td class="hatch">320.70</td><td class="hatch">320.69 / 320.71</td><td class="hatch">19.2M</td><td>1.0006×</td><td>active</td></tr>
+  <tr><td><b>NVDA</b></td><td>NVIDIA Corp</td><td class="hatch">…</td><td class="hatch">…</td><td class="hatch">…</td><td>1.00×</td><td>active</td></tr>
+  <tr><td><b>SPY</b> <small>halt</small></td><td>SPDR S&amp;P 500 ETF</td><td class="hatch">…</td><td class="hatch">…</td><td class="hatch">…</td><td>1.00×</td><td>active</td></tr>
+  <tr><td colspan="7" style="color:#888">… rows sort on header click; prices load for the visible 40 only</td></tr></table>
+  <div class="foot">Disclaimer strip: independent, not affiliated with Robinhood; issuer RHJ; no trades.</div>
+  <div class="ann" style="right:-6px;top:150px">Banner state comes from server-side geo. Three states: restricted / eligible / unknown. Unknown never says "eligible".</div>
+ </div>
+ <div class="frame narrow">
+  <h2>2 · Asset drawer (click a row)</h2>
+  <div class="box strong"><b>AAPL</b> <span style="float:right">✕</span></div>
+  <div class="kv"><span>Name</span><span>Apple Inc</span></div>
+  <div class="kv"><span>Mid</span><span class="hatch">$320.70</span></div>
+  <div class="kv"><span>Day range</span><span class="hatch">314.34 – 322.37</span></div>
+  <div class="kv"><span>Registry multiplier</span><span>1.0006×</span></div>
+  <div class="kv"><span>On-chain uiMultiplier</span><span class="hatch">1.0006×</span></div>
+  <div class="kv"><span>Pending multiplier</span><span>none</span></div>
+  <div class="kv"><span>Supply (shares)</span><span class="hatch">…</span></div>
+  <div class="kv"><span>ISIN</span><span>US0378331005</span></div>
+  <div class="kv"><span>Contract</span><span style="font-size:9px">0xaF3D…93f9</span></div>
+  <div class="btn ghost" style="margin:8px 0;display:inline-block">View on Blockscout ↗</div>
+  <div class="box"><b style="font-size:10px">CORPORATE ACTIONS</b><br><span style="font-size:11px">cash dividend · 2026-08-14 · completed</span></div>
+  <div class="ann" style="left:-40px;bottom:-30px">Contract address + explorer link is the anti-scam feature: only the canonical address is a real stock token.</div>
+ </div>
+</div>
+
+<div class="row">
+ <div class="frame">
+  <h2>3 · Corporate actions</h2>
+  <div class="note">Splits and dividends are applied through the on-chain multiplier; raw balances never change.</div>
+  <table><tr><th>Symbol</th><th>Type</th><th>Process date</th><th>Status</th><th>Details</th></tr>
+  <tr><td><b>AAPL</b></td><td>cash dividend</td><td>2026-08-14</td><td>completed</td><td class="hatch">{ cashDividend: … }</td></tr>
+  <tr><td><b>NVDA</b></td><td>forward split</td><td>2026-06-10</td><td>completed</td><td class="hatch">{ forwardSplit: 10:1 }</td></tr>
+  <tr><td colspan="5" style="color:#888">… most recent first; filter by symbol</td></tr></table>
+ </div>
+ <div class="frame">
+  <h2>4 · Holdings (read-only lookup)</h2>
+  <div class="note">Paste any address. No wallet connect, no signing, nothing is sent.</div>
+  <div class="bar"><div class="in">0x…</div><span class="btn">Look up</span></div>
+  <div class="grid g3"><div class="tile"><b>7</b><span>positions</span></div><div class="tile"><b class="hatch">$12,480</b><span>value (mid)</span></div><div class="tile"><b>read-only</b><span>mode</span></div></div>
+  <table style="margin-top:8px"><tr><th>Symbol</th><th>Tokens</th><th>Shares (UI)</th><th>Mid</th><th>Value</th></tr>
+  <tr><td><b>AAPL</b></td><td class="hatch">12.000</td><td class="hatch">12.0068</td><td class="hatch">320.70</td><td class="hatch"><b>3,850</b></td></tr>
+  <tr><td><b>SPY</b></td><td class="hatch">…</td><td class="hatch">…</td><td class="hatch">…</td><td class="hatch">…</td></tr></table>
+  <div class="ann" style="right:8px;bottom:8px">Shares = balanceOfUI (multiplier applied). Value = shares × mid. Unpriced rows show a dash, never a fake number.</div>
+ </div>
+</div>
+
+<div class="row">
+ <div class="frame narrow">
+  <h2>5 · Banner states</h2>
+  <div class="banner crit"><span class="tag">NOT AVAILABLE · US</span><span>Stock Tokens are not offered to persons in the United States…</span></div>
+  <div class="banner"><span class="tag">REGION DETECTED · DE</span><span>Availability still depends on the issuer's checks at purchase. This dashboard does not trade.</span></div>
+  <div class="banner" style="border-style:dashed"><span class="tag">REGION UNKNOWN</span><span>We could not determine your region. Stock Tokens are not available to US persons…</span></div>
+  <div class="ann" style="right:-10px;bottom:-26px">Restricted set is configuration; mirrors the issuer's published list (US, CA, GB, CH + 11 sanctioned).</div>
+ </div>
+ <div class="frame narrow">
+  <h2>6 · Mobile (market)</h2>
+  <div class="box strong">◈ Goji Stock Deck &nbsp; ☰</div>
+  <div class="banner crit" style="font-size:10px"><span class="tag">NOT AVAILABLE · US</span><span>Read-only.</span></div>
+  <div class="grid" style="grid-template-columns:1fr 1fr"><div class="tile"><b>194</b><span>tokens</span></div><div class="tile"><b>0</b><span>halts</span></div></div>
+  <div class="bar" style="margin-top:8px"><div class="in">Search</div></div>
+  <div class="box"><b>AAPL</b> <span style="float:right" class="hatch">320.70</span><br><small>Apple Inc · 1.0006×</small></div>
+  <div class="box"><b>NVDA</b> <span style="float:right" class="hatch">…</span><br><small>NVIDIA Corp · 1.00×</small></div>
+  <div class="box"><b>SPY</b> <span style="float:right" class="hatch">…</span><br><small>SPDR S&amp;P 500 · halt</small></div>
+ </div>
+</div>
+</body></html>

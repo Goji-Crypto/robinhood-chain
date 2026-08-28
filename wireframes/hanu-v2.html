@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Hanu v2 wireframes</title><style>body{margin:0;background:#eceff3;font:13px/1.4 Helvetica,Arial,sans-serif;color:#222;padding:24px}h1{font-size:18px;margin:0 0 6px}.note{color:#666;font-size:12px;margin-bottom:18px}.row{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start;margin-bottom:26px}.frame{background:#fff;border:2px solid #444;width:560px;min-height:340px;padding:12px;position:relative;box-shadow:4px 4px 0 #bbb}.frame.narrow{width:340px}.frame h2{font-size:12px;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px;color:#555;border-bottom:1px dashed #999;padding-bottom:6px}.box{border:1.5px solid #666;background:#f7f7f7;padding:8px;margin-bottom:8px;border-radius:2px}.box.strong{border-width:2px;background:#e9e9e9}.grid{display:grid;gap:8px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.tile{border:1.5px solid #666;padding:8px;background:#fafafa;text-align:center}.tile b{display:block;font-size:18px}.tile span{font-size:10px;color:#666;text-transform:uppercase}.bar{display:flex;gap:8px;align-items:center;margin-bottom:8px}.bar .in{flex:1;border:1.5px solid #666;padding:6px;background:#fff;color:#888}.btn{border:2px solid #333;padding:6px 10px;background:#fff;font-weight:bold}.btn.ghost{border-style:dashed;color:#777}table{width:100%;border-collapse:collapse;font-size:11.5px}th,td{border:1px solid #999;padding:5px;text-align:left}th{background:#e6e6e6;font-size:10px;text-transform:uppercase}.hatch{background:repeating-linear-gradient(45deg,#ddd 0 4px,#fff 4px 8px);color:#555}.ann{position:absolute;background:#fff3b0;border:1px solid #c9a800;padding:4px 6px;font-size:10.5px;max-width:190px;line-height:1.3}.banner{border:2px solid #333;padding:8px;margin-bottom:8px;display:flex;gap:10px;align-items:center}.banner .tag{border:1.5px solid #333;padding:2px 6px;font-size:10px;font-weight:bold;white-space:nowrap}.banner.crit{background:#f0f0f0;border-style:double}.steps{display:flex;gap:6px;align-items:stretch}.step{flex:1;border:1.5px solid #666;padding:8px;background:#fafafa;font-size:11.5px}.step b{display:block;margin-bottom:4px}.arrow{align-self:center;font-size:18px;color:#666}.kv{display:flex;justify-content:space-between;border-bottom:1px dotted #aaa;padding:4px 0;font-size:11.5px}.kv span:last-child{font-weight:bold}.drawer{position:absolute;right:10px;top:40px;width:200px;background:#fff;border:2px solid #444;padding:8px;box-shadow:3px 3px 0 #bbb}.foot{border-top:1px dashed #999;margin-top:8px;padding-top:6px;font-size:10px;color:#777}</style></head><body>
+<h1>Hanu Yokia v2 - migration, governance and bridge wireframes v0.1</h1>
+<div class="note">Greyscale by intent. These are the holder-facing and company-facing screens over the v2 contracts (token, migrator, lock-release bridge).</div>
+
+<div class="row">
+ <div class="frame">
+  <h2>1 · Migrate v1 → v2 (holder, on the v1 chain)</h2>
+  <div class="bar"><b>HANU v2 · Migrate</b><span style="flex:1"></span><span class="btn ghost">Ethereum ▾</span><span class="btn">Connect wallet</span></div>
+  <div class="steps">
+   <div class="step"><b>1 · Your v1</b>balance <span class="hatch">1,250,000 HANU</span><br><small>0x72e5…dbcc0</small></div><div class="arrow">→</div>
+   <div class="step"><b>2 · Lock</b>amount <span class="hatch">1,250,000</span><br><small>approve, then migrate()</small></div><div class="arrow">→</div>
+   <div class="step"><b>3 · Receive v2</b><span class="hatch">1,250,000 HANU v2</span><br><small>1:1 (decimals scaled)</small></div>
+  </div>
+  <div class="box" style="margin-top:10px"><b style="font-size:10px">STATUS</b><br>Migration: <b>open</b> · deadline: <b>none</b> · v2 float on this chain: <span class="hatch">8,400,000</span></div>
+  <div class="box"><b style="font-size:10px">WHAT HAPPENS TO YOUR v1</b><br>It stays locked in the migrator contract <span style="font-size:10px">0x…</span>. It can only be retrieved or burned after a public seven-day notice (see Governance).</div>
+  <div class="ann" style="right:-4px;top:118px">"Float too low" is a real state: show it plainly and link the CHANGELOG entry for the next top-up.</div>
+ </div>
+ <div class="frame narrow">
+  <h2>2 · Governance notice board (public)</h2>
+  <div class="box strong"><b>#14 · Burn 200,000 locked v1</b><br><small>announced 2026-09-02 · executes after 2026-09-09 · vote link</small><br><span class="btn ghost" style="font-size:10px">pending</span></div>
+  <div class="box"><b>#13 · Retrieve 300,000 v1 → treasury</b><br><small>executed 2026-08-30 · tx</small></div>
+  <div class="box"><b>Fee switch</b><br><small>feeBps = 0 · buckets: service 50% / marketing 30% / reserve 20% · ceiling 10%</small></div>
+  <div class="box"><b>Mint proposals</b><br><small>#3 · 5,000,000 to bridge float · 2/2 approvals · executes after 48h</small></div>
+  <div class="ann" style="left:-30px;bottom:-28px">Everything here is read from contract events. The board is the public promise: no silent changes.</div>
+ </div>
+</div>
+
+<div class="row">
+ <div class="frame">
+  <h2>3 · Bridge v2 (Robinhood Chain ↔ other chains)</h2>
+  <div class="bar"><b>HANU v2 · Bridge</b><span style="flex:1"></span><span class="btn">Connect wallet</span></div>
+  <div class="steps">
+   <div class="step"><b>From</b><span class="btn ghost">Robinhood Chain ▾</span><br>amount <span class="hatch">50,000</span></div><div class="arrow">⇄</div>
+   <div class="step"><b>To</b><span class="btn ghost">Ethereum ▾</span><br>recipient <span class="hatch">same address</span></div>
+  </div>
+  <div class="kv"><span>Per-transfer limit</span><span>1,000,000</span></div>
+  <div class="kv"><span>Remaining today (destination)</span><span class="hatch">7,250,000</span></div>
+  <div class="kv"><span>Destination float</span><span class="hatch">4,000,000</span></div>
+  <div class="kv"><span>Expected time</span><span>minutes (relayer)</span></div>
+  <div class="btn" style="margin-top:8px;display:inline-block">Deposit &amp; bridge</div>
+  <div class="box" style="margin-top:10px"><b style="font-size:10px">TRACK</b><br>deposit #<span class="hatch">1042</span> on 4663 → release on 1 · <span class="hatch">pending relayer</span></div>
+  <div class="ann" style="right:-6px;top:150px">Limits and float are live contract reads. If a transfer would exceed them, the button disables with the reason.</div>
+ </div>
+ <div class="frame narrow">
+  <h2>4 · Admin console (company, behind multisig)</h2>
+  <div class="box"><b>Mint</b><br><small>propose → approvals (2 of N) → 48h → execute</small></div>
+  <div class="box"><b>Fee policy</b><br><small>set feeBps (≤1000) · re-point bucket wallets · exemptions</small></div>
+  <div class="box"><b>Bridges</b><br><small>mint allowance per bridge · per-tx and daily limits · fund / withdraw float</small></div>
+  <div class="box"><b>Migrator</b><br><small>open/close · deadline · announce retrieve/burn/sweep (7-day delay)</small></div>
+  <div class="box"><b>Pause</b><br><small>time-boxed (≤7 days), auto-expires</small></div>
+  <div class="ann" style="left:-20px;bottom:-26px">Every button here builds a Safe transaction; nothing executes from an EOA.</div>
+ </div>
+</div>
+</body></html>
