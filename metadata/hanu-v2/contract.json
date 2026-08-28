@@ -1,0 +1,43 @@
+{
+  "name": "Hanu Yokia",
+  "symbol": "HANU",
+  "description": "Hanu Yokia v2 is the HANU token of the Goji Crypto ecosystem, issued natively on Robinhood Chain and managed by Goji Crypto Holdings LLC. Every administrative power is a named role held by the company multisig; fee increases, wallet changes and parameter loosening are announced at least one day ahead; lawful-order controls exist but are always public, provisional unless ratified, and seizure only after public notice. Not affiliated with, endorsed by, or operated by Robinhood.",
+  "image": "https://gojicrypto.com/hanu/v2/logo.png",
+  "banner_image": "https://gojicrypto.com/hanu/v2/banner.png",
+  "external_link": "https://github.com/Goji-Crypto/robinhood-chain",
+  "collaborators": [],
+  "version": "1.0.0-testnet",
+  "updated": "2026-08-28",
+  "snapshot": {
+    "ipfs": "TO_BE_PINNED_AFTER_PUBLISH",
+    "sha256": "TO_BE_COMPUTED_AFTER_PUBLISH",
+    "note": "Every published version of this document is pinned to IPFS and its CID is recorded here and in the CHANGELOG. The on-chain event ContractURIUpdated() is emitted by governance when this document changes."
+  },
+  "chain": {
+    "name": "Robinhood Chain",
+    "mainnet_chain_id": 4663,
+    "testnet_chain_id": 46630,
+    "explorer": "https://robinhoodchain.blockscout.com"
+  },
+  "contracts": {
+    "status": "testnet only; no mainnet addresses exist yet. Anything claiming to be HANU v2 on mainnet before it is announced in the CHANGELOG is not ours.",
+    "testnet": "see https://github.com/Goji-Crypto/robinhood-chain/blob/main/CHANGELOG.md"
+  },
+  "token_facts": {
+    "decimals": 18,
+    "hard_cap": "1,000,000,000,000,000 HANU (immutable)",
+    "transfer_tax": "0 (default); governed ceiling 10%; absolute fence 15%; increases announced at least 1 day ahead",
+    "fee_buckets": ["service", "marketing", "reserve"],
+    "pause": "time-boxed, at most 7 days per window, cooldown proportional to time paused",
+    "minting": "proposal, N approvals, delay, execution window; tokens can only land in approved company wallets",
+    "compliance": "provisional freeze thaws after 14 days unless ratified with notice; seizure or destruction only from a ratified freeze after a 7-day public announcement"
+  },
+  "links": {
+    "changelog": "https://github.com/Goji-Crypto/robinhood-chain/blob/main/CHANGELOG.md",
+    "marketing_direction": "https://github.com/Goji-Crypto/robinhood-chain/blob/main/docs/marketing-direction.md",
+    "wireframes": "https://github.com/Goji-Crypto/robinhood-chain/tree/main/wireframes",
+    "governance_board": "TO_BE_PUBLISHED",
+    "compliance_policy": "TO_BE_PUBLISHED",
+    "restricted_jurisdictions_notice": "Stock Tokens on Robinhood Chain are a separate product of Robinhood Assets (Jersey) Limited and are not available to US persons; HANU is a utility token of the Goji ecosystem and is not a stock token."
+  }
+}
