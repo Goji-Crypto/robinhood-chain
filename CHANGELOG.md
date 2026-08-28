@@ -7,7 +7,27 @@ effect (fee switch, bucket wallets, bridge limits, migration windows, governance
 - 2026-08-28: Project opened. No mainnet addresses exist yet; anything claiming to be HANU v2 on
   mainnet before it is announced here is not ours.
 
-## Testnet, compliance-controls redeploy (Robinhood Chain Testnet, chain id 46630) — 2026-08-28
+## Testnet, mint-controls redeploy (Robinhood Chain Testnet, chain id 46630) — 2026-08-28
+Two more holder-facing controls:
+- **Every privileged action now carries a written reason on-chain** (mint proposals, approvals, fee
+  changes, parameter changes, pauses, freezes, governance actions). Empty reasons are rejected.
+- **Minted tokens can only ever land in approved company wallets** (treasury, migration float,
+  bridge float). Adding a wallet to that list takes a public two-day delay; a compromised mint key
+  cannot route new tokens anywhere else. The mint process lives in its own contract
+  (`MintController`) so it can be replaced without touching the token.
+Addresses below supersede all earlier testnet sets.
+
+| Contract | Address |
+|---|---|
+| Hanu Yokia v2 (HANU) | `0xfCeD5f5bbD194c104949F629C19d65cE54C2BaB1` |
+| Mint controller | `0x659b79f1649a82499e8Bb23011953AEcE1223915` |
+| Fee policy (tax = 0, three buckets) | `0x77c78cA27607FE9f94F5c418C198d78526ae8D30` |
+| v1 → v2 migrator (lock) | `0xa9eaaC624C81303DACC0D0096Bdd55124d4d6cFD` |
+| Lock-release bridge | `0xB4C15e39Dd7f716D09da7EADC9920aA32Df73437` |
+| Compliance module | `0xaac432934e2c632c7DB783D2d31E334f6AB3ED4a` |
+| Mock v1 (testnet only) | `0x817A759Aa447777eF386C357858c2c5f90af60Ff` |
+
+## Testnet, compliance-controls redeploy (superseded) — 2026-08-28
 HANU v2 now carries lawful-order controls, designed so they can never be used quietly:
 - A compliance officer can place a **provisional freeze** on an address (no sending, no receiving),
   always with an order reference on-chain. It **thaws by itself after 14 days** unless the company

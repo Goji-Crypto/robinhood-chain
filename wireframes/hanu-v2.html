@@ -43,12 +43,12 @@
  </div>
  <div class="frame narrow">
   <h2>4 · Admin console (company, behind multisig)</h2>
-  <div class="box"><b>Mint</b><br><small>propose → approvals (2 of N) → 48h → execute</small></div>
+  <div class="box"><b>Mint</b><br><small>propose (to approved wallets or by plan) → approvals (2 of N) → 48h → execute · <u>reason required</u></small></div>
   <div class="box"><b>Fee policy</b><br><small>set feeBps (≤1000) · re-point bucket wallets · exemptions</small></div>
   <div class="box"><b>Bridges</b><br><small>mint allowance per bridge · per-tx and daily limits · fund / withdraw float</small></div>
   <div class="box"><b>Migrator</b><br><small>open/close · deadline · announce retrieve/burn/sweep (7-day delay)</small></div>
   <div class="box"><b>Pause</b><br><small>time-boxed (≤7 days), auto-expires</small></div>
-  <div class="ann" style="left:-20px;bottom:-26px">Every button here builds a Safe transaction; nothing executes from an EOA.</div>
+  <div class="ann" style="left:-20px;bottom:-26px">Every button here builds a Safe transaction with a mandatory reason field; nothing executes from an EOA.</div>
  </div>
 </div>
 </body></html>
