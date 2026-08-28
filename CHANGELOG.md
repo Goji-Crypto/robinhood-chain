@@ -7,7 +7,29 @@ effect (fee switch, bucket wallets, bridge limits, migration windows, governance
 - 2026-08-28: Project opened. No mainnet addresses exist yet; anything claiming to be HANU v2 on
   mainnet before it is announced here is not ours.
 
-## Testnet, mint-controls redeploy (Robinhood Chain Testnet, chain id 46630) — 2026-08-28
+## Testnet, future-proofing redeploy + public metadata (Robinhood Chain Testnet, chain id 46630) — 2026-08-28
+What changed for holders: a fee bucket can now burn instead of paying a wallet; transfer restrictions
+(if ever enabled) can be directional; allowlist memberships can expire; lawful-order holds can cover
+part of a balance instead of the whole address; contract wallets can use gasless approvals; audited
+third-party bridges can be plugged in by role; the token can register with the canonical Arbitrum bridge.
+Bridge operations gained a guardian role that can only tighten. Every hook was chosen so that no
+foreseeable scenario needs a v3 token (ADR 0010).
+
+Token metadata (ERC-7572) is now live at the fixed URL `https://gojicrypto.com/hanu/v2/contract.json`,
+served from Goji's own infrastructure, pinned on Goji's IPFS node (directory CID `bafybeib7zxlh6qxb55eqaqfvhn3gtlsizwi7jb47lhysqiuxmwnffwq6ua`, file CID `bafkreibfotzzmiqtibh4qrjnu6zm6ujhcd25qwmzzceaalk4m6x4knbfce`)
+and resolvable through DNSLink (`_dnslink.gojicrypto.com`). Version 1.0.0-testnet.
+
+| Contract | Address |
+|---|---|
+| Hanu Yokia v2 (HANU) | `0xbAC9Edf9d813a7165202e8e3e837Aa2Fd5D43fD9` |
+| Mint controller | `0x23E76a330587B88b74496E319C1b128a133fad8C` |
+| Fee policy (tax = 0, three buckets) | `0x74aC1534128aa00069483Ae6FbDDD75C5d4fEEcC` |
+| v1 → v2 migrator (lock) | `0x53dF90478385aaD73670c0722f036Dc7b83552CA` |
+| Lock-release bridge | `0xe0a153BEa0194F410A2E871742dfEdbE83C98Ac1` |
+| Compliance module | `0xff381AC706A6a4fd79a160A92CEd5Aac948f74d0` |
+| Mock v1 (testnet only) | `0xbDf2C054eAb2Af7dc77b6fD38d7F4338C51553E1` |
+
+## Testnet, mint-controls redeploy (superseded) — 2026-08-28
 Two more holder-facing controls:
 - **Every privileged action now carries a written reason on-chain** (mint proposals, approvals, fee
   changes, parameter changes, pauses, freezes, governance actions). Empty reasons are rejected.

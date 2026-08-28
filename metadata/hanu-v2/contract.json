@@ -9,9 +9,8 @@
   "version": "1.0.0-testnet",
   "updated": "2026-08-28",
   "snapshot": {
-    "ipfs": "TO_BE_PINNED_AFTER_PUBLISH",
-    "sha256": "TO_BE_COMPUTED_AFTER_PUBLISH",
-    "note": "Every published version of this document is pinned to IPFS and its CID is recorded here and in the CHANGELOG. The on-chain event ContractURIUpdated() is emitted by governance when this document changes."
+    "pinning": "Every published version is pinned on the Goji IPFS node (k3s) and its CID recorded in the CHANGELOG; the DNSLink record _dnslink.gojicrypto.com points at the current version's directory CID.",
+    "on_chain_signal": "ContractURIUpdated() is emitted by governance via announceContractURI(reason) when this document changes."
   },
   "chain": {
     "name": "Robinhood Chain",
@@ -27,7 +26,11 @@
     "decimals": 18,
     "hard_cap": "1,000,000,000,000,000 HANU (immutable)",
     "transfer_tax": "0 (default); governed ceiling 10%; absolute fence 15%; increases announced at least 1 day ahead",
-    "fee_buckets": ["service", "marketing", "reserve"],
+    "fee_buckets": [
+      "service",
+      "marketing",
+      "reserve"
+    ],
     "pause": "time-boxed, at most 7 days per window, cooldown proportional to time paused",
     "minting": "proposal, N approvals, delay, execution window; tokens can only land in approved company wallets",
     "compliance": "provisional freeze thaws after 14 days unless ratified with notice; seizure or destruction only from a ratified freeze after a 7-day public announcement"
