@@ -7,7 +7,29 @@ effect (fee switch, bucket wallets, bridge limits, migration windows, governance
 - 2026-08-28: Project opened. No mainnet addresses exist yet; anything claiming to be HANU v2 on
   mainnet before it is announced here is not ours.
 
-## Testnet, governed-parameters redeploy (Robinhood Chain Testnet, chain id 46630) — 2026-08-28
+## Testnet, compliance-controls redeploy (Robinhood Chain Testnet, chain id 46630) — 2026-08-28
+HANU v2 now carries lawful-order controls, designed so they can never be used quietly:
+- A compliance officer can place a **provisional freeze** on an address (no sending, no receiving),
+  always with an order reference on-chain. It **thaws by itself after 14 days** unless the company
+  multisig ratifies it with public notice.
+- **Seizure or destruction of funds is possible only from a ratified freeze**, only after a public
+  announcement and a seven-day delay, and every such action is published here first.
+- An **allowlist mode** exists for the case that HANU is ever brought under a securities regime; it is
+  off, and switching it on requires fourteen days of public notice.
+- The process lives in a separate, replaceable module; the freeze state lives in the token, so a
+  process change can never silently freeze or thaw anyone.
+Addresses below supersede all earlier testnet sets.
+
+| Contract | Address |
+|---|---|
+| Hanu Yokia v2 (HANU) | `0xb380aF161605E8daCc86087501edbE27F771b4eb` |
+| Fee policy (tax = 0, three buckets) | `0x9a3fcb38e1b098597f6aBAa124E743A348600c04` |
+| v1 → v2 migrator (lock) | `0x1E5C33E30e5E6846744964708Cf476420B3d1Ca8` |
+| Lock-release bridge | `0xBc3Af89EF41b2017e47B95848AE3e64c03D464A2` |
+| Compliance module | `0x0784AFCaeDadF280B66d3f0b40a6acd24f2fE7C7` |
+| Mock v1 (testnet only) | `0x003e6be78093D8676401e52193926Df21DcBE025` |
+
+## Testnet, governed-parameters redeploy (superseded) — 2026-08-28
 The protections that were hard-coded (fee ceiling, pause cap and cooldown, fee and policy delays,
 governance delays, bridge withdrawal delay and refill period) are now tunable by the company
 multisig **inside fixed fences**: any change that weakens a protection is announced and waits at

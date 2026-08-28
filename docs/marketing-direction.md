@@ -48,13 +48,17 @@ announced first, and v1 tokens you migrate stay locked and visible on-chain.
 **Messaging pillars**
 1. Migration you can verify. Lock v1, receive v2 one-to-one. Locked v1 can only leave the migrator
    after a public seven-day notice.
-2. No backdoors. v1's owner-only burn is gone. v2 has capped minting with multi-signer approval and
-   a delay, a fee switch that starts at zero with a hard ceiling, and a pause that expires on its own.
+2. No backdoors, and no quiet powers. v1's owner-only burn is gone. v2 has capped minting with
+   multi-signer approval and a delay, a fee switch that starts at zero with a hard ceiling, and a
+   pause that expires on its own. Lawful-order controls exist (freeze, seizure) but only under a
+   published order reference, provisional unless the multisig ratifies with notice, and seizure only
+   after a public seven-day announcement.
 3. Built to travel. A Goji-operated bridge with pre-funded floats and per-day limits, and an
    upgrade path to a LayerZero OFT when the time is right.
 
-**What we will not say.** Price targets, "stable", "guaranteed", "backed by stocks", or anything
-that implies HANU is a security or is tied to Robinhood.
+**What we will not say.** Price targets, "stable", "guaranteed", "backed by stocks", "no blacklist"
+(we have lawful-order freezes; say what they are), or anything that implies HANU is a security or is
+tied to Robinhood.
 
 ## Compliance guardrails for all material
 - No Robinhood logos, wordmarks, or brand colors; the network is named in plain text only.
