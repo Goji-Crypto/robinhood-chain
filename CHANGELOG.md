@@ -3,6 +3,23 @@
 All parameter changes to Goji contracts on Robinhood Chain are announced here before they take
 effect (fee switch, bucket wallets, bridge limits, migration windows, governance actions).
 
+## 2026-08-28 (later): audit preparation and mainnet readiness
+
+- The HANU v2 contract set is frozen for an independent security audit. The engagement package (scope,
+  invariants, evidence, reproduction steps) lives in the engineering repository; the final report will be
+  published here.
+- Mainnet deployment is a two-phase procedure: an unprivileged deployer constructs every contract with
+  the company Safe as admin and ends holding no role, then the Safe executes one reviewed transaction
+  batch (registration with Chainlink CCIP, roles, mint destinations and plan, allowances, metadata
+  announcement). Both phases were rehearsed on the Robinhood Chain testnet on 2026-08-28.
+- Robinhood Chain mainnet is listed in the Chainlink CCIP directory with lanes to Ethereum, Base, BNB
+  Chain, Arbitrum One and Solana; there is no direct lane to Polygon, so Polygon liquidity returns to
+  Ethereum and migrates there, as already stated in the bridge policy.
+- A security policy (`SECURITY.md`) is published: private vulnerability reporting through GitHub,
+  3 business day acknowledgement, 90 day coordinated disclosure.
+- CCIP rehearsal closed: the return leg (Sepolia to Robinhood Chain testnet) was delivered; the trial
+  token's supply on each chain and each pool's mint allowance are back exactly where they started.
+
 ## Unreleased
 - 2026-08-28: Project opened. No mainnet addresses exist yet; anything claiming to be HANU v2 on
   mainnet before it is announced here is not ours.
