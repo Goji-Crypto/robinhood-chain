@@ -7,6 +7,17 @@ effect (fee switch, bucket wallets, bridge limits, migration windows, governance
 - 2026-08-28: Project opened. No mainnet addresses exist yet; anything claiming to be HANU v2 on
   mainnet before it is announced here is not ours.
 
+## Bridge policy and CCIP rehearsal — 2026-08-28
+- **Migration**: one migrator, on Ethereum, against the original HANU (`0x72e5…dbcc0`). Holders on
+  Polygon, BSC, Base, Solana or any other chain return to Ethereum through the bridge they used
+  (Polygon PoS, the Goji bridge, Wormhole) and migrate there; there is no deadline.
+- **Bridging v2**: Chainlink CCIP (Burn & Mint) on every chain HANU v2 lives on. Wormhole is not used
+  for v2; the Goji relayer bridge is a fallback only.
+- **Rehearsal**: a trial HANU v2 at the same address on Robinhood Chain Testnet and Ethereum Sepolia
+  (`0xB9C034213A5D05D4c290701fCA579A8D12F8d0F1`, testnet only, no value) completed a CCIP round trip:
+  1,000 HANU Robinhood → Sepolia (message `0x6eef…bbd1`) and back (`0xecf2…791e`). Supply on each
+  side burned and minted exactly, and the pools' mint allowances returned to their starting values.
+
 ## Testnet, future-proofing redeploy + public metadata (Robinhood Chain Testnet, chain id 46630) — 2026-08-28
 What changed for holders: a fee bucket can now burn instead of paying a wallet; transfer restrictions
 (if ever enabled) can be directional; allowlist memberships can expire; lawful-order holds can cover
