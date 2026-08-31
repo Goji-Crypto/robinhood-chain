@@ -3,6 +3,20 @@
 All parameter changes to Goji contracts on Robinhood Chain are announced here before they take
 effect (fee switch, bucket wallets, bridge limits, migration windows, governance actions).
 
+## 2026-08-31 (later still): GojiSwap multihop + wallet signing on testnet
+
+- A second pool is live on the testnet GojiSwap: tGOJ/tUSD (a valueless GOJ stand-in). There is
+  deliberately no direct HANU/tGOJ pair, so HANU <-> tGOJ routes through tUSD; a real multihop
+  swap delivered exactly its quoted amount.
+- The suite at www.gojicrypto.com now connects an injected wallet (with an automatic switch to
+  the Robinhood testnet), and live-pool swaps are signed and broadcast by YOUR wallet — the
+  server only prepares transactions and never holds keys.
+
+| Contract | Address |
+|---|---|
+| Goji Test GOJ (testnet only, no value) | `0x9061A1E2398663FfDBdFE6a447352CDA6070E6BF` |
+| tGOJ/tUSD pair | `0x2af2564deCf0A2548C2B24a1097FA839AA52a038` |
+
 ## 2026-08-31 (later): GojiSwap live on testnet
 
 - The GojiSwap AMM is deployed on Robinhood Chain Testnet (chain 46630) and exercised end to end:
