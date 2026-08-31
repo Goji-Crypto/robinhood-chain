@@ -3,6 +3,18 @@
 All parameter changes to Goji contracts on Robinhood Chain are announced here before they take
 effect (fee switch, bucket wallets, bridge limits, migration windows, governance actions).
 
+## 2026-08-31 (evening): daily airdrop + mock TradFi pools + AI market making on testnet
+
+- A daily testnet airdrop is live at www.gojicrypto.com (Swap page): one claim per 24 hours pays
+  a basket of test assets (tUSD, tGOJ, and four MOCK Stock Tokens — tAAPL, tNVDA, tTSLA, tSPY —
+  which are testnet stand-ins with no value; real Stock Tokens exist only on mainnet and remain
+  read-only in this suite). Contract: `0x8884091c7Ef01a00e2A8BcC93537D44eB92cd482`.
+- The mock stock pools are MARKET-MADE toward live reference quotes: an automated market maker
+  trades each pool toward the real market price every few minutes, and every decision it takes
+  is published as a cryptographically signed AI-liquidity notice in the suite's Messages feed.
+- The token registry is public: github.com/Goji-Crypto/goji-token-list (schema, CI validation,
+  PR-based listing with TradFi / DeFi / Memes categories).
+
 ## 2026-08-31: mint proposal #1 executed on testnet
 
 - Governed mint proposal #1 (30,000,000 HANU top-up to the migrator float, proposed with an
