@@ -3,6 +3,15 @@
 All parameter changes to Goji contracts on Robinhood Chain are announced here before they take
 effect (fee switch, bucket wallets, bridge limits, migration windows, governance actions).
 
+## 2026-08-31: mint proposal #1 executed on testnet
+
+- Governed mint proposal #1 (30,000,000 HANU top-up to the migrator float, proposed with an
+  on-chain reason, approved, and executed after the one-hour delay) completed on Robinhood
+  Chain Testnet: tx `0xae3588c20ce1a7fbe6f58a14d3c1943018b03b568543096c264095ddec982fbf`.
+  The float covers v1 → v2 migrations, including the draw used to seed GojiSwap liquidity;
+  testnet HANU supply is now 40,000,000. Mints can only ever land in approved destinations
+  (currently: the migrator alone).
+
 ## 2026-08-31 (later still): GojiSwap multihop + wallet signing on testnet
 
 - A second pool is live on the testnet GojiSwap: tGOJ/tUSD (a valueless GOJ stand-in). There is
