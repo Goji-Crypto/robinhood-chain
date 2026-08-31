@@ -3,6 +3,15 @@
 All parameter changes to Goji contracts on Robinhood Chain are announced here before they take
 effect (fee switch, bucket wallets, bridge limits, migration windows, governance actions).
 
+## 2026-08-30: Goji Stock Deck dashboard is live
+
+- The read-only Stock Token dashboard is live at https://stockdeck.gojilabs.xyz and
+  https://deck.gojicrypto.com. It shows the public asset registry, prices, on-chain multipliers and
+  corporate actions for the Stock Tokens on Robinhood Chain, plus read-only holdings for any address.
+- It is informational only: it does not trade, does not take accounts and does not custody anything.
+  It is not affiliated with, endorsed by or operated by Robinhood. A region banner reflects the
+  restricted-jurisdiction list; unknown regions are shown a neutral notice, never an eligibility claim.
+
 ## 2026-08-28 (later): audit preparation and mainnet readiness
 
 - The HANU v2 contract set is frozen for an independent security audit. The engagement package (scope,
