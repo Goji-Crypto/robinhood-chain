@@ -3,6 +3,18 @@
 All parameter changes to Goji contracts on Robinhood Chain are announced here before they take
 effect (fee switch, bucket wallets, bridge limits, migration windows, governance actions).
 
+## 2026-08-31 (night): the Goji meme launchpad is live on testnet
+
+- Anyone can launch a token at www.gojicrypto.com (Memes): a 1 tUSD creation fee, the full
+  1B supply custodied by a bonding curve (800M sellable, priced in tUSD), and graduation at
+  160 tUSD raised — at which point the curve automatically seeds a GojiSwap pool and burns
+  the LP tokens forever. No creator allocation, no withdrawable liquidity: rug-resistance is
+  structural, not promised.
+- All launchpad fees (creation, 1% per trade, 5% at graduation) flow to the airdrop treasury,
+  like the protocol fee — the platform's take funds the community faucet.
+- Every community post on a token thread is cryptographically signed and verifiable.
+- First launch: GCAT (Goji Cat), already trading on its curve.
+
 ## 2026-08-31 (late): GojiSwap protocol fee switched ON (testnet)
 
 - The GojiSwap protocol fee is now ON for the testnet deployment: one sixth of every pool's
