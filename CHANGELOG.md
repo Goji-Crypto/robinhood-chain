@@ -3,6 +3,21 @@
 All parameter changes to Goji contracts on Robinhood Chain are announced here before they take
 effect (fee switch, bucket wallets, bridge limits, migration windows, governance actions).
 
+## 2026-08-31 (later): GojiSwap live on testnet
+
+- The GojiSwap AMM is deployed on Robinhood Chain Testnet (chain 46630) and exercised end to end:
+  a real swap through the router matched its quote exactly and grew the pool's invariant by the
+  0.30% liquidity-provider fee. The first pool pairs HANU v2 (testnet) against a valueless test
+  dollar at the reference price. Protocol fee is off; the fee switch is role-gated and will be
+  held by the company Safe on mainnet.
+
+| Contract | Address |
+|---|---|
+| GojiSwap factory | `0xb71325d9fF3071291C4801b911236CF8aeE0b724` |
+| GojiSwap router | `0x4d72154eb2A95bb929d20B7B8227C7ecB48e4a80` |
+| HANU/tUSD pair | `0x8701F65a5d472A1DE1e8d083C8aA14bAdA036cC8` |
+| Goji Test USD (testnet only, no value) | `0xa457598E1DB7CED1149d74ca07756812EB1FFb05` |
+
 ## 2026-08-31: Goji Crypto Suite is live at www.gojicrypto.com
 
 - The Goji Crypto Suite — Stock Deck, Swap, Perps, Lend, Marketplace, Bridge, Messages,
