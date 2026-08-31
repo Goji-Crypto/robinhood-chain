@@ -3,6 +3,15 @@
 All parameter changes to Goji contracts on Robinhood Chain are announced here before they take
 effect (fee switch, bucket wallets, bridge limits, migration windows, governance actions).
 
+## 2026-08-31 (late): GojiSwap protocol fee switched ON (testnet)
+
+- The GojiSwap protocol fee is now ON for the testnet deployment: one sixth of every pool's
+  growth mints to the **airdrop treasury** (`0x8884…d482`) — protocol fees directly fund the
+  community faucet rather than accruing inside the pools. Liquidity providers keep the other
+  five sixths of the 0.30% swap fee, unchanged. Switch tx `0xa83c…4945`; the first fee mint is
+  on-chain and verified. On mainnet this switch will be held by the company Safe and announced
+  here before any change, per the standing fee-governance policy.
+
 ## 2026-08-31 (evening): daily airdrop + mock TradFi pools + AI market making on testnet
 
 - A daily testnet airdrop is live at www.gojicrypto.com (Swap page): one claim per 24 hours pays
