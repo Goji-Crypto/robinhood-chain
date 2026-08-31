@@ -3,6 +3,21 @@
 All parameter changes to Goji contracts on Robinhood Chain are announced here before they take
 effect (fee switch, bucket wallets, bridge limits, migration windows, governance actions).
 
+## 2026-08-31: Goji Crypto Suite is live at www.gojicrypto.com
+
+- The Goji Crypto Suite — Stock Deck, Swap, Perps, Lend, Marketplace, Bridge, Messages,
+  Statistics and Settings in one application — is live at https://www.gojicrypto.com,
+  running against the Robinhood Chain testnet (chain 46630, Sepolia bridge lane) until
+  mainnet launch. www previously redirected to another Goji property; gojicrypto.com and
+  cms.gojicrypto.com are unchanged, and https://gojicrypto.com/hanu/v2/contract.json remains
+  the canonical HANU v2 metadata address.
+- Honest labeling: the Stock Deck and Bridge read live data; the Swap, Perps, Lend and
+  Marketplace venues run clearly-badged simulated engines until their contracts deploy.
+  Every alert and quote the suite emits is cryptographically signed and verified in the UI.
+- GojiSwap: the AMM contracts (constant-product pairs safe for fee-on-transfer tokens,
+  0.30% liquidity-provider fee, protocol fee off by default behind a role) are written and
+  under internal test. They are not deployed; they join the external audit as follow-on scope.
+
 ## 2026-08-30: Goji Stock Deck dashboard is live
 
 - The read-only Stock Token dashboard is live at https://stockdeck.gojilabs.xyz and
